@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -134,20 +136,18 @@ function PageHeader({ luxe = false }) {
 
   return (
     <header
-      className={`border-b px-6 py-5 md:px-12 ${
-        luxe
-          ? "border-[#50303D] bg-[#26171E]"
-          : "border-[#EFDDE2] bg-[#FFF7F8]"
-      }`}
+      className={`border-b px-6 py-5 md:px-12 ${luxe
+        ? "border-[#50303D] bg-[#26171E]"
+        : "border-[#EFDDE2] bg-[#FFF7F8]"
+        }`}
     >
       <div className="relative mx-auto flex max-w-7xl items-center justify-between">
         <button
           onClick={() => navigate("/")}
-          className={`text-sm transition ${
-            luxe
-              ? "text-[#E8C98E] hover:text-white"
-              : "text-[#641F3A] hover:text-[#C96C87]"
-          }`}
+          className={`text-sm transition ${luxe
+            ? "text-[#E8C98E] hover:text-white"
+            : "text-[#641F3A] hover:text-[#C96C87]"
+            }`}
         >
           ← Home
         </button>
@@ -157,17 +157,15 @@ function PageHeader({ luxe = false }) {
           className="absolute left-1/2 -translate-x-1/2 text-center"
         >
           <h1
-            className={`whitespace-nowrap font-serif text-2xl md:text-3xl ${
-              luxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
-            }`}
+            className={`whitespace-nowrap font-serif text-2xl md:text-3xl ${luxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
+              }`}
           >
             The Nails Tale
           </h1>
 
           <p
-            className={`mt-1 hidden text-[9px] tracking-[0.22em] sm:block ${
-              luxe ? "text-[#D8B679]" : "text-[#C96C87]"
-            }`}
+            className={`mt-1 hidden text-[9px] tracking-[0.22em] sm:block ${luxe ? "text-[#D8B679]" : "text-[#C96C87]"
+              }`}
           >
             EVERY SET TELLS A STORY
           </p>
@@ -175,11 +173,10 @@ function PageHeader({ luxe = false }) {
 
         <Link
           to="/cart"
-          className={`rounded-full px-5 py-2 text-sm transition ${
-            luxe
-              ? "bg-[#D8B679] text-[#26171E] hover:bg-[#F0D69D]"
-              : "bg-[#641F3A] text-white hover:bg-[#C96C87]"
-          }`}
+          className={`rounded-full px-5 py-2 text-sm transition ${luxe
+            ? "bg-[#D8B679] text-[#26171E] hover:bg-[#F0D69D]"
+            : "bg-[#641F3A] text-white hover:bg-[#C96C87]"
+            }`}
         >
           Cart
         </Link>
@@ -234,21 +231,18 @@ function HomePage() {
 function ProductCard({ product, luxe }) {
   return (
     <article
-      className={`overflow-hidden rounded-[1.5rem] border shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl ${
-        luxe
-          ? "border-[#6D4352] bg-[#321C26]"
-          : "border-[#E8C9D2] bg-[#FFFCFA]"
-      }`}
+      className={`overflow-hidden rounded-[1.5rem] border shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl ${luxe
+        ? "border-[#6D4352] bg-[#321C26]"
+        : "border-[#E8C9D2] bg-[#FFFCFA]"
+        }`}
     >
       <div
-        className={`flex aspect-square items-center justify-center ${
-          luxe ? "bg-[#412630]" : "bg-[#F7E5EA]"
-        }`}
+        className={`flex aspect-square items-center justify-center ${luxe ? "bg-[#412630]" : "bg-[#F7E5EA]"
+          }`}
       >
         <p
-          className={`font-serif text-xl ${
-            luxe ? "text-[#D8B679]" : "text-[#C96C87]"
-          }`}
+          className={`font-serif text-xl ${luxe ? "text-[#D8B679]" : "text-[#C96C87]"
+            }`}
         >
           Product image
         </p>
@@ -256,36 +250,32 @@ function ProductCard({ product, luxe }) {
 
       <div className="p-6">
         <h3
-          className={`font-serif text-2xl ${
-            luxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
-          }`}
+          className={`font-serif text-2xl ${luxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
+            }`}
         >
           {product.name}
         </h3>
 
         <p
-          className={`mt-2 text-sm ${
-            luxe ? "text-[#D9C2CA]" : "text-[#765560]"
-          }`}
+          className={`mt-2 text-sm ${luxe ? "text-[#D9C2CA]" : "text-[#765560]"
+            }`}
         >
           {product.description}
         </p>
 
         <div className="mt-5 flex items-center justify-between gap-3">
           <p
-            className={`text-lg font-semibold ${
-              luxe ? "text-[#E8C98E]" : "text-[#641F3A]"
-            }`}
+            className={`text-lg font-semibold ${luxe ? "text-[#E8C98E]" : "text-[#641F3A]"
+              }`}
           >
             ₹{product.price}
           </p>
 
           <button
-            className={`rounded-full px-5 py-2 text-sm transition ${
-              luxe
-                ? "bg-[#D8B679] text-[#2B1821] hover:bg-[#F0D69D]"
-                : "bg-[#641F3A] text-white hover:bg-[#C96C87]"
-            }`}
+            className={`rounded-full px-5 py-2 text-sm transition ${luxe
+              ? "bg-[#D8B679] text-[#2B1821] hover:bg-[#F0D69D]"
+              : "bg-[#641F3A] text-white hover:bg-[#C96C87]"
+              }`}
           >
             Add to Cart
           </button>
@@ -301,9 +291,8 @@ function CollectionPage({ type }) {
 
   return (
     <div
-      className={`min-h-screen ${
-        isLuxe ? "bg-[#26171E]" : "bg-[#FFF7F8]"
-      }`}
+      className={`min-h-screen ${isLuxe ? "bg-[#26171E]" : "bg-[#FFF7F8]"
+        }`}
     >
       <PageHeader luxe={isLuxe} />
 
@@ -311,25 +300,22 @@ function CollectionPage({ type }) {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <p
-              className={`text-xs tracking-[0.35em] ${
-                isLuxe ? "text-[#D8B679]" : "text-[#C96C87]"
-              }`}
+              className={`text-xs tracking-[0.35em] ${isLuxe ? "text-[#D8B679]" : "text-[#C96C87]"
+                }`}
             >
               {isLuxe ? "PREMIUM SETS" : "EVERYDAY SETS UNDER ₹1,000"}
             </p>
 
             <h2
-              className={`mt-4 font-serif text-5xl md:text-6xl ${
-                isLuxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
-              }`}
+              className={`mt-4 font-serif text-5xl md:text-6xl ${isLuxe ? "text-[#FFF4F6]" : "text-[#641F3A]"
+                }`}
             >
               {isLuxe ? "The Luxe Tales" : "Little Tales"}
             </h2>
 
             <p
-              className={`mx-auto mt-5 max-w-xl leading-7 ${
-                isLuxe ? "text-[#D9C2CA]" : "text-[#765560]"
-              }`}
+              className={`mx-auto mt-5 max-w-xl leading-7 ${isLuxe ? "text-[#D9C2CA]" : "text-[#765560]"
+                }`}
             >
               {isLuxe
                 ? "Intricate, luxurious statement nails handcrafted for your most unforgettable chapters."
@@ -353,12 +339,67 @@ function CollectionPage({ type }) {
 }
 
 function CustomNailsPage() {
-  function handleSubmit(event) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    alert(
-      "Your request form is working. We will connect it to the backend later."
-    );
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const inspirationFile = formData.get("inspiration");
+
+    const requestData = {
+      customerName: formData.get("customerName"),
+      phone: formData.get("phone"),
+      occasion: formData.get("occasion"),
+      budget: formData.get("budget"),
+      shape: formData.get("shape") || "Not decided",
+      length: formData.get("length") || "Not decided",
+      colours: formData.get("colours"),
+      details: formData.get("details"),
+      inspirationFileName:
+        inspirationFile && inspirationFile.name
+          ? inspirationFile.name
+          : "",
+    };
+
+    try {
+      setIsSubmitting(true);
+      setSubmitMessage("");
+
+      const response = await fetch(
+        "http://localhost:5000/api/custom-requests",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to submit your request.");
+      }
+
+      setSubmitSuccess(true);
+      setSubmitMessage(
+        "Your custom nail tale has been submitted successfully ♡"
+      );
+
+      form.reset();
+    } catch (error) {
+      setSubmitSuccess(false);
+      setSubmitMessage(
+        error.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -384,64 +425,74 @@ function CustomNailsPage() {
 
           <div className="grid overflow-hidden rounded-[2rem] border border-[#E8C9D2] bg-[#FFFCFA] shadow-xl lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative overflow-hidden bg-[#641F3A] p-8 text-white md:p-12">
-              <div className="absolute -right-10 -top-10 text-[150px] text-white/5">
+              <div className="pointer-events-none absolute -right-10 -top-12 text-[170px] text-white/[0.06]">
                 ♡
               </div>
 
-              <p className="text-xs tracking-[0.3em] text-[#F4C9D6]">
-                YOUR DREAM SET ✦
-              </p>
-
-              <h3 className="mt-4 font-serif text-4xl">
-                Tell us your story ♡
-              </h3>
-
-              <p className="mt-5 leading-7 text-[#F8E8ED]">
-                Birthday glam, bridal magic, vacation sparkle—or simply because
-                you deserve pretty nails. Share your idea and we’ll turn it
-                into a tiny masterpiece made just for you ♡
-              </p>
-
-              <div className="mt-10 space-y-7">
-                <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
-                  <p className="font-serif text-xl text-[#FFD9E4]">
-                    ♡ Dream it your way
-                  </p>
-
-                  <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
-                    Pick your colours, details, charms and mood—we’ll bring your
-                    nail vision to life.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
-                  <p className="font-serif text-xl text-[#FFD9E4]">
-                    ♡ Approve every detail
-                  </p>
-
-                  <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
-                    We’ll confirm the design, price and timeline with you before
-                    anything is final.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
-                  <p className="font-serif text-xl text-[#FFD9E4]">
-                    ♡ Made only for you
-                  </p>
-
-                  <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
-                    Your set will be individually handcrafted—because your tale
-                    should never feel ordinary.
-                  </p>
-                </div>
+              <div className="pointer-events-none absolute -left-9 top-[38%] text-[145px] text-white/[0.05]">
+                ♡
               </div>
 
-              <div className="mt-10 rounded-2xl border border-[#C8879C] bg-[#75324B] p-5">
-                <p className="text-sm leading-6 text-[#FFF0F4]">
-                  No payment yet, promise ♡ Submit your idea and we’ll contact
-                  you before creating your custom set.
+              <div className="pointer-events-none absolute -bottom-14 -right-8 text-[185px] text-white/[0.06]">
+                ♡
+              </div>
+
+              <div className="relative z-10">
+                <p className="text-xs tracking-[0.3em] text-[#F4C9D6]">
+                  YOUR DREAM SET ✦
                 </p>
+
+                <h3 className="mt-4 font-serif text-4xl">
+                  Tell us your story ♡
+                </h3>
+
+                <p className="mt-5 leading-7 text-[#F8E8ED]">
+                  Birthday glam, bridal magic, vacation sparkle—or simply
+                  because you deserve pretty nails. Share your idea and we’ll
+                  turn it into a tiny masterpiece made just for you ♡
+                </p>
+
+                <div className="mt-10 space-y-7">
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
+                    <p className="font-serif text-xl text-[#FFD9E4]">
+                      ♡ Dream it your way
+                    </p>
+
+                    <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
+                      Pick your colours, details, charms and mood—we’ll bring
+                      your nail vision to life.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
+                    <p className="font-serif text-xl text-[#FFD9E4]">
+                      ♡ Approve every detail
+                    </p>
+
+                    <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
+                      We’ll confirm the design, price and timeline with you
+                      before anything is final.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4 transition hover:bg-white/10">
+                    <p className="font-serif text-xl text-[#FFD9E4]">
+                      ♡ Made only for you
+                    </p>
+
+                    <p className="mt-2 text-sm leading-6 text-[#F1DCE3]">
+                      Your set will be individually handcrafted—because your
+                      tale should never feel ordinary.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-10 rounded-2xl border border-[#C8879C] bg-[#75324B] p-5">
+                  <p className="text-sm leading-6 text-[#FFF0F4]">
+                    No payment yet, promise ♡ Submit your idea and we’ll contact
+                    you before creating your custom set.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -457,6 +508,7 @@ function CustomNailsPage() {
 
                   <input
                     id="customerName"
+                    name="customerName"
                     type="text"
                     required
                     placeholder="Enter your name"
@@ -474,6 +526,7 @@ function CustomNailsPage() {
 
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     required
                     placeholder="+91"
@@ -491,17 +544,20 @@ function CustomNailsPage() {
 
                   <select
                     id="occasion"
+                    name="occasion"
                     required
                     className="w-full rounded-xl border border-[#DFC2CB] bg-white px-4 py-3 outline-none transition focus:border-[#C96C87]"
                   >
                     <option value="">Select an occasion</option>
-                    <option>Everyday</option>
-                    <option>Birthday</option>
-                    <option>Wedding or engagement</option>
-                    <option>Vacation</option>
-                    <option>Festival</option>
-                    <option>Date night</option>
-                    <option>Other</option>
+                    <option value="Everyday">Everyday</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Wedding or engagement">
+                      Wedding or engagement
+                    </option>
+                    <option value="Vacation">Vacation</option>
+                    <option value="Festival">Festival</option>
+                    <option value="Date night">Date night</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -515,14 +571,17 @@ function CustomNailsPage() {
 
                   <select
                     id="budget"
+                    name="budget"
                     required
                     className="w-full rounded-xl border border-[#DFC2CB] bg-white px-4 py-3 outline-none transition focus:border-[#C96C87]"
                   >
                     <option value="">Select your budget</option>
-                    <option>Under ₹1,000</option>
-                    <option>₹1,000–₹1,499</option>
-                    <option>₹1,500–₹1,999</option>
-                    <option>₹2,000 and above</option>
+                    <option value="Under ₹1,000">Under ₹1,000</option>
+                    <option value="₹1,000–₹1,499">₹1,000–₹1,499</option>
+                    <option value="₹1,500–₹1,999">₹1,500–₹1,999</option>
+                    <option value="₹2,000 and above">
+                      ₹2,000 and above
+                    </option>
                   </select>
                 </div>
 
@@ -536,14 +595,15 @@ function CustomNailsPage() {
 
                   <select
                     id="shape"
+                    name="shape"
                     className="w-full rounded-xl border border-[#DFC2CB] bg-white px-4 py-3 outline-none transition focus:border-[#C96C87]"
                   >
                     <option value="">Not decided</option>
-                    <option>Almond</option>
-                    <option>Oval</option>
-                    <option>Square</option>
-                    <option>Coffin</option>
-                    <option>Stiletto</option>
+                    <option value="Almond">Almond</option>
+                    <option value="Oval">Oval</option>
+                    <option value="Square">Square</option>
+                    <option value="Coffin">Coffin</option>
+                    <option value="Stiletto">Stiletto</option>
                   </select>
                 </div>
 
@@ -557,12 +617,13 @@ function CustomNailsPage() {
 
                   <select
                     id="length"
+                    name="length"
                     className="w-full rounded-xl border border-[#DFC2CB] bg-white px-4 py-3 outline-none transition focus:border-[#C96C87]"
                   >
                     <option value="">Not decided</option>
-                    <option>Short</option>
-                    <option>Medium</option>
-                    <option>Long</option>
+                    <option value="Short">Short</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Long">Long</option>
                   </select>
                 </div>
               </div>
@@ -577,6 +638,7 @@ function CustomNailsPage() {
 
                 <input
                   id="colours"
+                  name="colours"
                   type="text"
                   placeholder="Example: blush pink, white and gold"
                   className="w-full rounded-xl border border-[#DFC2CB] bg-white px-4 py-3 outline-none transition focus:border-[#C96C87]"
@@ -593,6 +655,7 @@ function CustomNailsPage() {
 
                 <input
                   id="inspiration"
+                  name="inspiration"
                   type="file"
                   accept="image/*"
                   className="w-full cursor-pointer rounded-xl border border-dashed border-[#D8A9B8] bg-[#FFF7F8] px-4 py-6 text-sm text-[#765560]"
@@ -614,6 +677,7 @@ function CustomNailsPage() {
 
                 <textarea
                   id="details"
+                  name="details"
                   required
                   rows="5"
                   placeholder="Tell us about the design, colours, charms or details you want..."
@@ -621,11 +685,26 @@ function CustomNailsPage() {
                 />
               </div>
 
+              {submitMessage && (
+                <div
+                  className={`mt-6 rounded-xl border px-4 py-3 text-sm ${
+                    submitSuccess
+                      ? "border-[#B9D7C1] bg-[#F0FAF3] text-[#356143]"
+                      : "border-[#E5B6C2] bg-[#FFF0F3] text-[#8B304B]"
+                  }`}
+                >
+                  {submitMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="mt-8 w-full rounded-full bg-[#641F3A] px-8 py-3.5 text-white transition hover:bg-[#C96C87]"
+                disabled={isSubmitting}
+                className="mt-8 w-full rounded-full bg-[#641F3A] px-8 py-3.5 text-white transition hover:bg-[#C96C87] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Submit My Nail Tale
+                {isSubmitting
+                  ? "Submitting Your Tale..."
+                  : "Submit My Nail Tale"}
               </button>
             </form>
           </div>

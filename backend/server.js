@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const connectDatabase = require("./config/db");
+const customRequestRoutes = require("./routes/customRequestRoutes");
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.get("/api/health", (req, res) => {
     status: "healthy",
   });
 });
+
+app.use("/api/custom-requests", customRequestRoutes);
 
 const PORT = process.env.PORT || 5000;
 
